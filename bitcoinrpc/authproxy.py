@@ -137,7 +137,6 @@ class AuthServiceProxy(object):
         self.__conn.sock.settimeout(self.__timeout)
 
         response = self._get_response()
-        print(response)
         if 'error' in response and response['error'] is not None:
             raise JSONRPCException(response['error'])
         elif 'result' not in response:
